@@ -1,0 +1,22 @@
+.homeContainer {
+    height: 100%;
+    padding: 50px;
+}
+.tokenContainer {
+    height: 100px;
+    margin-bottom: 50px;
+    text-align: center;
+    font-family: 'Open Sans';
+}
+
+#tokenNumber {
+    height: 70px;
+    line-height: 70px;
+    font-size: 60px;
+}
+
+#tokenUnit {
+    height: 20px;
+    line-height: 20px;
+    font-size: 16px;
+}

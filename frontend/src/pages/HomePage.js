@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useContext} from 'react'
 import AuthContext from '../context/AuthContext'
+import './HomePage.css'
 
 const HomePage = () => {
     let [notes, setNotes] = useState([])
@@ -28,13 +29,17 @@ const HomePage = () => {
     }
 
     return (
-      <div>
-            <p>At HomePage</p>
-            <ul>
-            {notes.map(note => (
-                <li key={note.id} >{note.body}</li>
-            ))}
-            </ul>
+      <div className='homeContainer'>
+        <div className='tokenContainer'>
+            <p id='tokenNumber'>200</p>
+            <p id='tokenUnit'>carbon tokens</p>
+        </div>
+        
+        <ul>
+        {notes.map(note => (
+            <li key={note.id} >{note.body}</li>
+        ))}
+        </ul>
       </div>
     )
   }
