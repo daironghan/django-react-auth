@@ -9,6 +9,8 @@ from rest_framework_simplejwt.views import TokenObtainPairView
 from .serializers import NoteSerializer
 from base.models import Note
 
+import subprocess
+from dotenv import load_dotenv, dotenv_values
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
@@ -29,6 +31,7 @@ def getRoutes(request):
     routes = [
         '/api/token',
         '/api/token/refresh',
+        '/api/query'
     ]
     return Response(routes)
 
@@ -39,3 +42,11 @@ def getNotes(request):
     notes = user.note_set.all()
     serializer = NoteSerializer(notes, many=True)
     return Response(serializer.data)
+
+def index(request):
+    cmd = "/home/website/backend/base/api/token_erc_20 " + request.GET.get('cmd')
+    env = dotenv_values("/home/website/backend/base/api/env/.env.org1.minter")
+    print(cmd.split(" "))
+    res = subprocess.run(cmd.split(" "), env=env, capture_output=True)
+    
+    return JsonResponse({'stdout': res.stdout.decode(), 'stderr': res.stderr.decode()})
