@@ -7,7 +7,7 @@
     height: 30px;
 }
 .formContainer {
-    height: 350px;
+    height: 420px;
     width: 300px;
     margin: auto;
     padding: 30px;
@@ -20,6 +20,12 @@
     display: block;
     width: 100%;
 }
+
+.formContainer select {
+    display: block;
+    width: 100%;
+}
+
 .formContainer .textInput {
     margin-bottom: 20px;
     border: none;
@@ -57,14 +63,6 @@
     border: 2px solid #6ECCAF;
     border-radius: 15px;
 }
-
-/* #submitButton {
-    font-size: 14px;
-    margin-top: 40px;
-    background-color: #6ECCAF;
-    border-radius: 10px;
-    font-weight: normal;
-} */
 
 #submitButton:hover {
     background-color: #e7e7e7;

@@ -48,5 +48,8 @@ def index(request):
     env = dotenv_values("/home/website/backend/base/api/env/.env.org1.minter")
     print(cmd.split(" "))
     res = subprocess.run(cmd.split(" "), env=env, capture_output=True)
-    
-    return JsonResponse({'stdout': res.stdout.decode(), 'stderr': res.stderr.decode()})
+    output = res.stdout.decode().split("***")
+    transaction, result = output[0].strip("-> ").rsplit(".", 1)[0], ""
+    if (res.stderr.decode() == ""):
+        result = output[1].strip().replace("Result: ", "")
+    return JsonResponse({"action": transaction.split(" ")[0], "transaction": transaction.split(" ")[2], "result": result, 'error_msg': res.stderr.decode()})

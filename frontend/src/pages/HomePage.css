@@ -8,7 +8,16 @@
     text-align: center;
     font-family: 'Open Sans';
 }
-
+.functionsContainer {
+    height: 200px;
+    max-width: 1000px;
+    margin: auto;
+}
+.funcItemContainer {
+    display: flex;
+    height: 40px;
+    margin: 10px 0px;
+}
 #tokenNumber {
     height: 70px;
     line-height: 70px;
@@ -19,4 +28,30 @@
     height: 20px;
     line-height: 20px;
     font-size: 16px;
+}
+.funcItemContainer button {
+    width: 100px;
+    border: none;
+    border-radius: 10px;
+    margin-right: 10px;
+    font-family: 'open sans';
+    background-color: #e7e7e7;
+}
+
+.funcItemContainer button:hover {
+    background-color: #6ECCAF;
+}
+
+.funcItemContainer input {
+    flex-grow: 1;
+    margin: 0px 10px;
+    font-family: 'open sans';
+    border: 2px solid #e7e7e7;
+    border-radius: 10px;
+    background-color: white;
+    padding-left: 10px;
+}
+
+.funcItemContainer input:focus {
+    outline-color: #6ECCAF;
 }
